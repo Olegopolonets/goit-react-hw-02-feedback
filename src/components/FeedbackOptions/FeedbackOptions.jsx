@@ -1,13 +1,15 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(options);
   return (
     <>
       {options.map(item => (
-        <button type="button" name={item} onClick={onLeaveFeedback}>
-          {item}
-        </button>
+        <div key={nanoid()}>
+          <button type="button" name={item} onClick={onLeaveFeedback}>
+            {item}
+          </button>
+        </div>
       ))}
     </>
   );
